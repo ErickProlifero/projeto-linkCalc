@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkCalc - Viabilidade FTTH | Erick Santana</title>
+    <!-- Importando uma fonte moderna e ícones -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <i class="fas fa-network-wired logo-icon"></i>
+            <h1>LinkCalc <span class="badge">FTTH</span></h1>
+            <p>Simulador de Viabilidade de Sinal Óptico</p>
+        </header>
+
+        <section class="card">
+            <div class="input-group">
+                <label for="sinalCto">Sinal na CTO (dBm)</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <input type="number" id="sinalCto" placeholder="Ex: -18" step="0.01" required>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="distancia">Metragem do Cabo Drop (m)</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-route"></i>
+                    <input type="number" id="distancia" placeholder="Ex: 150" required>
+                </div>
+            </div>
+
+            <button onclick="calcular()" class="btn-calc">
+                Verificar Viabilidade <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <section id="resultado" class="result-card hidden">
+            <h3>Resultado da Simulação</h3>
+            <div id="statusIcon"></div>
+            <p id="textoResultado"></p>
+            <div class="detalhes-tecnicos">
+                <small>*Cálculo baseado em perda média de 0.35dB por km + 0.1dB por fusão/conector.</small>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>Erick Rodrigues de Santana</strong></p>
+        <div class="links">
+            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
